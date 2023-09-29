@@ -30,6 +30,11 @@ div {
   padding: 20px;
 }
 </style>
+<script>
+    function CtoF() {
+      document.getElementById("F").value =  document.getElementById("C").value;
+    }
+    </script>
 <body>
 <h3>Convertor</h3>
 <div>
@@ -39,9 +44,31 @@ div {
 
     <label>F</label>
     <input type="text" id="F" >
-     <button>C to F</button>
+     <button onclick="CtoF()">C to F
+     </button>
+     
      <button>F to C</button
 </div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
