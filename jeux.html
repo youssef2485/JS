@@ -46,10 +46,15 @@
             document.getElementById(id2).src="back.jpg";
             if (tour==1) {
                 tour=2;
-
+                document.getElementById("p2").style.color="red";
+                document.getElementById("p1").style.color="black";
             }
-            else 
+            else {
+                document.getElementById("p1").style.color="red";
+                document.getElementById("p2").style.color="black";
                 tour=1
+            }
+                
         }
     </script>
     
@@ -77,10 +82,10 @@
         <img src="back.jpg" id="10" onclick="reverse()">
     </div>
     <div>
-        <p>score 1 :
+        <p id="p1">score 1 :
             <label id="s1"></label>
         </p>
-        <p>score 2 :
+        <p id="p2">score 2 :
             <label id="s2"></label>
         </p>
     </div>
