@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let cards = ["1.png","4.png","3.png","2.png","4.png","3.png","1.png","2.png"]
+        let nbtire=0; 
+        let id1=0;
+        let id2=0;
+        let s1=0;
+        let s2=0;
+        let tour=1;
+        
+        function reverse() {
+            nbtire++;
+            document.getElementById(event.target.id).src=cards[event.target.id];
+            if (nbtire==1)
+            {
+                id1=event.target.id;
+        
+            }
+            else  
+            {
+                id2=event.target.id;
+                if ( cards[id1]!=cards[id2] ) 
+                {
+                    setTimeout(inverse,1200);
+                } 
+                else {
+                    if (tour==1 )
+                        s1++;
+                    else
+                        s2++;                    
+                }
+                nbtire=0;
+                document.getElementById("s1").innerHTML=s1;
+                document.getElementById("s2").innerHTML=s2;
+            }
+        }
+     
+        function inverse ()
+        {
+            document.getElementById(id1).src="back.jpg";
+            document.getElementById(id2).src="back.jpg";
+            if (tour==1) {
+                tour=2;
+                
+            }
+            else 
+                tour=1
+        }
+    </script>
+    
+    <style>
+        img {
+            width: 150px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body style="background-color: green;">
+    <div>
+        <img src="back.jpg" id="0" onclick="reverse()">
+        <img src="back.jpg" id="1" onclick="reverse()">
+        <img src="back.jpg" id="2" onclick="reverse()">
+        <img src="back.jpg" id="3" onclick="reverse()">
+    </div>
+    <div>
+        <img src="back.jpg" id="4" onclick="reverse()">
+        <img src="back.jpg" id="5" onclick="reverse()">
+        <img src="back.jpg" id="6" onclick="reverse()"> 
+        <img src="back.jpg" id="7" onclick="reverse()">
+    </div>
+    <div>
+        <p>score 1 :
+            <label id="s1"></label>
+        </p>
+        <p>score 2 :
+            <label id="s2"></label>
+        </p>
+    </div>
+</body>
+</html>
