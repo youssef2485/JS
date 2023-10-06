@@ -1,73 +1,28 @@
 <!DOCTYPE html>
-<html>
-<style>
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #45a049;
-}
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
-<script>
-    function CtoF() {
-      document.getElementById("F").value =  (document.getElementById("C").value * 9/5)+32;
-    }
-    function FtoC() {
-      document.getElementById("C").value =  (document.getElementById("F").value -32)*5/9;
-    }
-    </script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-<h3>Convertor</h3>
-<div>
+    <div>
+        <label>Nom : </label><input type="text" placeholder="Nom..." id="nom">
+        <label id="errnom"></label>
+        <br><br>
+        
+        <label>Prenom : </label><input type="text" placeholder="Prenom..."><br><br>
+        <label>Email : </label><input type="email" placeholder="email@gmail.com..."><br><br>
+        <label>Telephone : </label><input type="Telephone" placeholder="Telephone..."><br><br>
+        <label>Date de Match : </label><input type="date" id="dateMatch"  placeholder="Date de Match..."><br><br>
+        <label>Lieu de Match : </label><select>
+            <option>Ariena</option>
+            <option>Sfax</option>
+            <option>Tunise</option>
+        </select><br><br>
+        <button onclick="validerDateMatch()">S'inscrire de match</button>
+    </div>
 
-    <label>C</label>
-    <input type="text" id="C" onkeyup="CtoF()"  >
-
-    <label>F</label>
-    <input type="text" id="F" onkeyup="FtoC()" >
-</div>
-
+    <script src="inscription.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
