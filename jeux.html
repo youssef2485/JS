@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let cards = ["1.png","4.png","3.png","2.png","4.png","3.png","1.png","2.png","5.png","7.png","6.png","7.png","6.png","5.png"]
+        let images=["1.png","4.png","3.png","2.png","5.png","7.png","6.png"];
+        let compteur=[0,0,0,0,0,0,0,0];
+        let cards = [];
         let nbtire=0; 
         let id1=0;
         let id2=0;
@@ -13,6 +15,21 @@
         let s2=0;
         let tour=1;
         
+        function init() {
+            for( let i=0;i<images.length*2;i++) 
+            {
+              while (true){
+                let R=Math.floor(Math.random() * images.length);
+                if (compteur[R]<2){
+                    cards[i]=images[R];
+                    compteur[R]++;
+                    break;
+                }
+              }
+               
+            }
+            console.log("cards : ",cards);
+        }        
         function reverse() {
             nbtire++;
             document.getElementById(event.target.id).src=cards[event.target.id];
@@ -24,6 +41,7 @@
             else  
             {
                 id2=event.target.id;
+                console.log("id1:",id1,"  id2:",id2);
                 if ( cards[id1]!=cards[id2] ) 
                 {
                     setTimeout(inverse,1200);
@@ -56,6 +74,7 @@
             }
                 
         }
+        init();
     </script>
     
     <style>
@@ -71,15 +90,20 @@
         <img src="back.jpg" id="1" onclick="reverse()">
         <img src="back.jpg" id="2" onclick="reverse()">
         <img src="back.jpg" id="3" onclick="reverse()">
-    </div>
-    <div>
         <img src="back.jpg" id="4" onclick="reverse()">
         <img src="back.jpg" id="5" onclick="reverse()">
-        <img src="back.jpg" id="6" onclick="reverse()"> 
+        <img src="back.jpg" id="6" onclick="reverse()">
+       
+    </div>
+    <div>
         <img src="back.jpg" id="7" onclick="reverse()">
         <img src="back.jpg" id="8" onclick="reverse()">
         <img src="back.jpg" id="9" onclick="reverse()">
         <img src="back.jpg" id="10" onclick="reverse()">
+        <img src="back.jpg" id="11" onclick="reverse()">
+        <img src="back.jpg" id="12" onclick="reverse()">
+        <img src="back.jpg" id="13" onclick="reverse()">
+        
     </div>
     <div>
         <p id="p1">score 1 :
